@@ -24,7 +24,7 @@
 
 - Sebastian Lorenzo (Javascript developer)
 - E-mail: [SebastianLorenzo@gmail.com](mailto:SebastianLorenzo@gmail.com)
-- StackOverflow: [@sebastian-lorenzo](http://stackoverflow.com/users/1741027/sebastian-lorenzo?tab=profile)
+- StackOverflow: [sebastian-lorenzo](http://stackoverflow.com/users/1741027/sebastian-lorenzo?tab=profile)
 
 ## License
 
