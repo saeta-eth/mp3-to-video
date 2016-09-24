@@ -8,7 +8,11 @@
 
 ## Usage
 
-	var mp3ToVideo = require('nmp3-to-video');
+	var ConvertCommand = require('mp3-to-video')
+	var Command = new ConvertCommand('mp3Path', 'extension', 'imagePath')
+
+	console.log(Command.getAttributes)
+
 
 ## npm scripts
 
