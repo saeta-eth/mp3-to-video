@@ -31,7 +31,7 @@
     "ffmpeg"
   ],
   "license": "MIT",
-  "main": "lib/index.js",
+  "main": "index.js",
   "name": "mp3-to-video",
   "repository": {
     "type": "git",
