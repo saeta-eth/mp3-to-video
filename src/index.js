@@ -1,2 +1,1 @@
-export Convert from './convert'
-
+export Convert from './convert';
