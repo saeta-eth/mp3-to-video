@@ -1,9 +1,10 @@
 import fileExists from 'file-exists';
 import FFmpeg from 'fluent-ffmpeg';
-import fs from 'fs';
 
 /* eslint class-methods-use-this:
-["error", {"exceptMethods": ["checkTypes", "isString", "getNameOfPath"] }] */
+[ "error",
+  {"exceptMethods": ["checkTypes", "isString", "fillWithNewExt", "convert", "throwIfMissing"] }
+] */
 
 class Convert {
   constructor(
@@ -81,7 +82,7 @@ class Convert {
     * @param {string} extension
   */
   fillWithNewExt(path, ext) {
-    return path.substr(0, path.lastIndexOf(".")) + '.' +ext;
+    return `${path.substr(0, path.lastIndexOf('.'))}.${ext}`;
   }
 
   /**
@@ -106,13 +107,13 @@ class Convert {
         '-c:a aac',
         '-strict experimental',
         '-b:a 192k',
-        '-shortest'
+        '-shortest',
       ])
       .on('error', (err) => {
         callback(err);
       })
       .on('end', () => {
-        callback(null, true);
+        callback(null, 'OK');
       })
       .run();
   }
@@ -128,13 +129,13 @@ class Convert {
     * It is a module initialize
     * @param {init~requestCallback} callback
   */
-  init(callback) {  
+  init(callback) {
     if (!fileExists(this.path)) callback(new Error('MP3 path is wrong.'));
     if (!fileExists(this.image)) callback(new Error('Image path is wrong.'));
     this.convert(this.path, this.image, this.output, (err, success) => {
-      if(err) callback(err);
+      if (err) callback(err);
       callback(null, {
-        status: 'OK',
+        status: success,
         message: 'Everything OK',
         videoPath: this.output,
       });
