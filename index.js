@@ -1,1 +1,1 @@
-module.exports = require('./lib').Convert
+module.exports = require('./lib').Convert;
