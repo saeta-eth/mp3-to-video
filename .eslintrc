@@ -8,8 +8,7 @@
     "node": true
   },
   "extends": [
-    "airbnb",
-    "airbnb/es6"
+    "airbnb/base"
   ],
   "parser": "babel-eslint"
 }
