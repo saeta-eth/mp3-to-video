@@ -15,7 +15,7 @@ You need to install `ffmpeg`.
   // ES6 
   import ConvertCommand from 'mp3-to-video';
   const Convert = new ConvertCommand('mp3Path', 'extension', 'imagePath');
-  Convert.init(function(err, response){
+  Convert.init((err, response) => {
     if (err) { 
       console.log(err);
     } else {
@@ -36,7 +36,7 @@ You need to install `ffmpeg`.
       console.log(response.message);  // Everything OK
       console.log(response.videoPath); // eg. /path/to/output.mp4
     }
-	});
+  });
   ```
 
 ## API
