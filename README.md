@@ -11,8 +11,8 @@
 You need to install `ffmpeg`.
 
 ## Simple Usage
-
-  /* ES6 */
+  ```js
+  // ES6 
   import ConvertCommand from 'mp3-to-video';
   const Convert = new ConvertCommand('mp3Path', 'extension', 'imagePath');
   Convert.init(function(err, response){
@@ -25,7 +25,7 @@ You need to install `ffmpeg`.
     }
   });
 
-	/* ES5 */
+	// ES5
 	var ConvertCommand = require('mp3-to-video');
 	var Convert = new ConvertCommand('mp3Path', 'extension', 'imagePath')
 	Convert.init(function(err, response){
@@ -37,12 +37,13 @@ You need to install `ffmpeg`.
       console.log(response.videoPath); // eg. /path/to/output.mp4
     }
 	});
+  ```
 
 ## API
-  `changePath` : Change mp3 path.
-  `changeOutputPath` : Change output path.
-  `changeExtension` : Change extension output file.
-  `changeImage` : Change image path.
+- `changePath` : Change mp3 path.
+- `changeOutputPath` : Change output path.
+- `changeExtension` : Change extension output file.
+- `changeImage` : Change image path.
 
 ## npm scripts
 
