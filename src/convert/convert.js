@@ -39,7 +39,7 @@ class Convert {
     * @param {string} output path of video
   */
   set changeOutputPath(output) {
-    this.output = output;
+    this.output = this.fillWithNewExt(output, this.ext);;
   }
 
   /**
