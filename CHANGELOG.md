@@ -7,3 +7,7 @@
 ## 1.0.1
 
 * Change description
+
+## 1.0.2
+
+* Add example
