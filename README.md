@@ -6,13 +6,43 @@
 
 `npm i mp3-to-video --save`
 
-## Usage
+## Prerequisites
 
-	var ConvertCommand = require('mp3-to-video')
-	var Command = new ConvertCommand('mp3Path', 'extension', 'imagePath')
+You need to install `ffmpeg`.
 
-	console.log(Command.getAttributes)
+## Simple Usage
 
+  /* ES6 */
+  import ConvertCommand from 'mp3-to-video';
+  const Convert = new ConvertCommand('mp3Path', 'extension', 'imagePath');
+  Convert.init(function(err, response){
+    if (err) { 
+      console.log(err);
+    } else {
+      console.log(response.status);   // true
+      console.log(response.message);  // Everything OK
+      console.log(response.videoPath); // eg. /path/to/output.mp4
+    }
+  });
+
+	/* ES5 */
+	var ConvertCommand = require('mp3-to-video');
+	var Convert = new ConvertCommand('mp3Path', 'extension', 'imagePath')
+	Convert.init(function(err, response){
+    if (err) { 
+      console.log(err);
+    } else {
+      console.log(response.status);   // true
+      console.log(response.message);  // Everything OK
+      console.log(response.videoPath); // eg. /path/to/output.mp4
+    }
+	});
+
+## API
+  `changePath` : Change mp3 path.
+  `changeOutputPath` : Change output path.
+  `changeExtension` : Change extension output file.
+  `changeImage` : Change image path.
 
 ## npm scripts
 
