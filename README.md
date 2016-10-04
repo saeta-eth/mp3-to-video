@@ -1,6 +1,6 @@
 # mp3-to-video
 
-> Convert mp3 to video with a image background.
+> Create video from mp3 and a single image.
 
 ## Install
 
