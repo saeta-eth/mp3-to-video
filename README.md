@@ -25,10 +25,10 @@ You need to install `ffmpeg`.
     }
   });
 
-	// ES5
-	var ConvertCommand = require('mp3-to-video');
-	var Convert = new ConvertCommand('mp3Path', 'extension', 'imagePath')
-	Convert.init(function(err, response){
+  // ES5
+  var ConvertCommand = require('mp3-to-video');
+  var Convert = new ConvertCommand('mp3Path', 'extension', 'imagePath')
+  Convert.init(function(err, response){
     if (err) { 
       console.log(err);
     } else {
