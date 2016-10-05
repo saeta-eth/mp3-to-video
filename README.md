@@ -40,8 +40,8 @@ You need to install `ffmpeg`.
   ```
 
 ## API
-- `changePath` : Change mp3 path.
-- `changeOutputPath` : Change output path.
+- `changeMp3` : Change mp3 path.
+- `changeOutput` : Change output path.
 - `changeExtension` : Change extension output file.
 - `changeImage` : Change image path.
 
