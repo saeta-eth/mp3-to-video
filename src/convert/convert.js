@@ -8,22 +8,22 @@ import FFmpeg from 'fluent-ffmpeg';
 
 class Convert {
   constructor(
-    path = this.throwIfMissing(),
+    mp3 = this.throwIfMissing(),
     ext = this.throwIfMissing(),
     image = this.throwIfMissing()
   ) {
-    this.checkTypes(path, ext, image);
-    this.path = path;
+    this.checkTypes(mp3, ext, image);
+    this.mp3 = mp3;
     this.ext = ext;
     this.image = image;
-    this.output = this.fillWithNewExt(this.path, this.ext);
+    this.output = this.fillWithNewExt(this.mp3, this.ext);
   }
 
   /**
     * It is a getter, should show all params
   */
   get getAttributes() {
-    return `${this.path} ${this.ext} ${this.image} ${this.output}!`;
+    return `${this.mp3} ${this.ext} ${this.image} ${this.output}!`;
   }
 
   /**
@@ -31,7 +31,7 @@ class Convert {
     * @param {string} path of mp3
   */
   set changePath(path) {
-    this.path = path;
+    this.mp3 = mp3;
   }
 
   /**
@@ -81,8 +81,8 @@ class Convert {
     * @param {string} Path of mp3
     * @param {string} extension
   */
-  fillWithNewExt(path, ext) {
-    return `${path.substr(0, path.lastIndexOf('.'))}.${ext}`;
+  fillWithNewExt(mp3, ext) {
+    return `${mp3.substr(0, mp3.lastIndexOf('.'))}.${ext}`;
   }
 
   /**
@@ -92,14 +92,14 @@ class Convert {
     * @param {string} output path to output file (eg. /path/to/output.mp4)
     * @param {convert~requestCallback} callback
   */
-  convert(audio, image, output, callback) {
+  convert(mp3, image, output, callback) {
     const Command = new FFmpeg();
     Command
       .input(image)
       .inputOptions([
         '-loop 1',
       ])
-      .input(audio)
+      .input(mp3)
       .output(output)
       .outputOptions([
         '-c:v libx264',
@@ -130,9 +130,9 @@ class Convert {
     * @param {init~requestCallback} callback
   */
   init(callback) {
-    if (!fileExists(this.path)) callback(new Error('MP3 path is wrong.'));
+    if (!fileExists(this.mp3)) callback(new Error('MP3 path is wrong.'));
     if (!fileExists(this.image)) callback(new Error('Image path is wrong.'));
-    this.convert(this.path, this.image, this.output, (err, success) => {
+    this.convert(this.mp3, this.image, this.output, (err, success) => {
       if (err) callback(err);
       callback(null, {
         status: success,
