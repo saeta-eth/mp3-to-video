@@ -38,7 +38,7 @@ class Convert {
     * It is a setter for output path
     * @param {string} output path of video
   */
-  set changeOutputPath(output) {
+  set changeOutput(output) {
     this.output = this.fillWithNewExt(output, this.ext);
   }
 
@@ -52,7 +52,7 @@ class Convert {
 
   /**
     * It is a setter for image
-    * @param {string} path of image
+    * @param {string} image path
   */
   set changeImage(image) {
     this.image = image;
@@ -60,7 +60,7 @@ class Convert {
 
   /**
     * For each params and calls _isString function
-    * @param {object} Should be a string
+    * @param {object} arguments be a string
   */
   checkTypes(...args) {
     args.forEach(value => this.isString(value));
@@ -68,7 +68,7 @@ class Convert {
 
   /**
     * Check if params is a string
-    * @param {any} Should be a string
+    * @param {any} value be a string
   */
   isString(value) {
     if (typeof value !== 'string' && !(value instanceof String)) {
@@ -78,7 +78,7 @@ class Convert {
 
   /**
     * It return a path with output extension
-    * @param {string} Path of mp3
+    * @param {string} mp3 path
     * @param {string} extension
   */
   fillWithNewExt(mp3, ext) {
@@ -87,8 +87,8 @@ class Convert {
 
   /**
     * Takes an image and mp3 and converts it to an mp4
-    * @param {string} image path to image file (eg. /path/to/image.jpg)
     * @param {string} audio path to audi file (eg. /path/to/audio.mp3)
+    * @param {string} image path to image file (eg. /path/to/image.jpg)
     * @param {string} output path to output file (eg. /path/to/output.mp4)
     * @param {convert~requestCallback} callback
   */
