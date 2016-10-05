@@ -27,10 +27,10 @@ class Convert {
   }
 
   /**
-    * It is a setter for path
-    * @param {string} path of mp3
+    * It is a setter for mp3 path
+    * @param {string} mp3 path
   */
-  set changePath(path) {
+  set changeMp3(mp3) {
     this.mp3 = mp3;
   }
 
