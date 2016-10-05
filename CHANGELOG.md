@@ -11,3 +11,7 @@
 ## 1.0.2
 
 * Add example
+
+## 1.0.3
+
+* Fix grammar
