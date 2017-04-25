@@ -63,4 +63,4 @@ You need to install `ffmpeg`.
 
 ## License
 
-MIT license. Copyright © 2016.
+MIT license. Copyright © 2017.
